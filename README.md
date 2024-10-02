@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+# THR 08 Widget - Sterowanie Jasnością Lamp Lotniskowych
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Opis
 
-Currently, two official plugins are available:
+Jest to komponent widgetu do sterowania grupą lamp lotniskowych **THR 08**, które są zasilane bateryjnie. Widget umożliwia:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Sterowanie jasnością lamp za pomocą przycisków **[+]** i **[-]**.
+- Wyświetlanie aktualnego poziomu jasności w formie liczbowej oraz za pomocą poziomych pasków na górze widgetu.
+- Wyświetlanie pozostałego czasu działania lamp na baterii.
+- Zmianę trybów pracy lamp przy pomocy trzech przełączników:
+  - **Night Vision**: Tryb pracy w nocy.
+  - **Dusk Till Dawn**: Automatyczne włączanie i wyłączanie w zależności od pory dnia.
+  - **Flashing**: Tryb migania.
 
-## Expanding the ESLint configuration
+## Technologie
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Projekt został stworzony przy użyciu następujących technologii:
 
-- Configure the top-level `parserOptions` property like this:
+- **TypeScript**: Język programowania z systemem typów.
+- **React**: Biblioteka do budowania interfejsu użytkownika.
+- **CSS**: Użyto zwykłego CSS z zastosowaniem zagnieżdżania (nesting).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Skrypty
+
+### `npm run test`
+Uruchamia testy jednostkowe przy użyciu Vitest.
+
+```bash
+npm run test
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### `npm run build`
+Buduje aplikację. Najpierw kompiluje TypeScript, a następnie buduje aplikację przy użyciu Vite.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+npm run build
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### `npm run preview`
+Serwuje zbudowaną aplikację lokalnie w trybie podglądu przy użyciu Vite.
+
+\```bash
+npm run preview
+\```
+
+## Instalacja
+
+Aby uruchomić projekt lokalnie, wykonaj następujące kroki:
+
+1. Sklonuj repozytorium:
+
+```bash
+git clone https://github.com/uzytkownik/nazwa-repozytorium.git
+```
+
+2. Zainstaluj zależności:
+
+```bash
+npm install
+```
+
+3. Uruchom środowisko deweloperskie:
+
+```bash
+npm run dev
+```
+
+4. Aby uruchomić testy:
+
+```bash
+npm run test
+```
+
+5. Aby zbudować aplikację do produkcji:
+
+```bash
+npm run build
+```
+
+6. Aby uruchomić lokalny serwer z zbudowaną aplikacją:
+
+```bash
+npm run preview
 ```
