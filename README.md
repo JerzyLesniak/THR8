@@ -39,9 +39,9 @@ npm run build
 ### `npm run preview`
 Serwuje zbudowaną aplikację lokalnie w trybie podglądu przy użyciu Vite.
 
-\```bash
+```bash
 npm run preview
-\```
+```
 
 ## Instalacja
 
